@@ -3,17 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <tittle>About us |Sollie's Bakery</tittle>
+    <title>About Us | Sollie's Bakery</title>
+    
+    <!-- Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Site Header -->
     <header>
         <h1>Sollie's Bakery</h1>
-        <p>Freshly baked, everyday ,in the heart of johannesburg</p>
+        <p>Freshly baked, everyday, in the heart of Johannesburg</p>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="enquiry.html">Custom Order</a></li>
@@ -21,26 +29,35 @@
             </ul>
         </nav>
     </header>
-    <!-- Bakery history-->
+
     <main>
+        <!-- Bakery History -->
         <section id="history">
             <h2>Our Story</h2>
-            <p>Sollie's Bakery is a small ,family-run bakery estalblished in 2019 in johannesburg,South Africa.What began as a home-based baaking operation selling bread and cupcakes to neighbours has grown into a small storefrontserving fresh bread,pastries and custom celebration cakes for the local community.To date ,the bakery has relied on word-of mouth referals and a basic facebookpage to reach customers &mdash;this website marks the next step in bringing that same wormth online</p>
+            <p>Sollie's Bakery is a small, family-run bakery established in 2019 in Johannesburg, South Africa. What began as a home-based baking operation selling bread and cupcakes to neighbours has grown into a storefront serving fresh bread, pastries and custom celebration cakes for the local community. To date, the bakery has relied on word-of-mouth referrals and a basic Facebook page to reach customers &mdash; this website marks the next step in bringing that same warmth online.</p>
         </section>
-        <!-- Mission and vision statements-->
+
+        <!-- Mission and Vision Statements -->
         <section id="mission-vision">
-            <h2>Our Mission</h2>
-            <p>To bring people and communities together though freshly baked,high-quality products made with locally sourced ingredientsand genuine care</p>
-            <h2>Our Vision</h2>
-            <p>To become the most trusted neighbourhood bakery in johannesburg, known for consistency,creativity and community involvement</p>
+            <article class="mission-card">
+                <h2>Our Mission</h2>
+                <p>To bring people and communities together through freshly baked, high-quality products made with locally sourced ingredients and genuine care.</p>
+            </article>
+
+            <article class="mission-card">
+                <h2>Our Vision</h2>
+                <p>To become the most trusted neighbourhood bakery in Johannesburg, known for consistency, creativity and community involvement.</p>
+            </article>
         </section>
-        <!-- Target audience, useful context for the visitor -->
-        <section id="Who-we-serve">
-            <h2>Who we Serve</h2>
-            <p>We proudly serve local residents,working professionals looking for convenient daily bread and pastries,Customers planning birthdays,weddings and corporate events who need custom cakes and catering</p>
+
+        <!-- Target Audience Section -->
+        <section id="who-we-serve">
+            <h2>Who We Serve</h2>
+            <p>We proudly serve local residents, working professionals looking for convenient daily bread and pastries, and customers planning birthdays, weddings, and corporate events who need custom cakes and catering.</p>
         </section>
-        <!-- Core values,supporting the mission.vision above -->
-        <section id="What-we-value">
+
+        <!-- Core Values Section -->
+        <section id="what-we-value">
             <h2>What We Value</h2>
             <ul>
                 <li>Quality baked products</li>
@@ -51,28 +68,31 @@
                 <li>Genuine care for customers</li>
             </ul>
         </section>
-        <!-- Team introduction-->
+
+        <!-- Team Section -->
         <section id="team">
             <h2>Meet the Team</h2>
             <article class="team-member">
-                <img src="images/team-sollie.jpg" alt="Potrait of Sollie,founder and head baker"width="300" height="300">
-                <h3>Sollie &mdash;Founder &amp;Head Baker</h3>
-                <p>Sollie started baking bread for neighbours in 2019 ans has since grown that passion into a full storefront bakery,personally overseeing every custom cake order.</p>
+                <img src="images/team-sollie.jpg" alt="Portrait of Sollie, founder and head baker" width="300" height="300">
+                <h3>Sollie &mdash; Founder &amp; Head Baker</h3>
+                <p>Sollie started baking bread for neighbours in 2019 and has since grown that passion into a full storefront bakery, personally overseeing every custom cake order.</p>
             </article>
+
             <article class="team-member">
-                <img src="images/team-pastry-chef.jpg" alt="Potrait of the bakerys pastry chef"width="300" height="300">
+                <img src="images/team-pastry-chef.jpg" alt="Portrait of the bakery's pastry chef" width="300" height="300">
                 <h3>Our Pastry Chef</h3>
-                <p>Responsible for the daily pastry selection ,from croissants to Danishes ,Baked fresh every monring before the door opens</p>
+                <p>Responsible for the daily pastry selection, from croissants to Danishes, baked fresh every morning before the doors open.</p>
             </article>
         </section>
     </main>
-    <!--Site footer:contact snippet,hours and social links, repeated on every page -->
+
+    <!-- Site Footer -->
     <footer>
         <p>Sollie's Bakery, 12 Baker Street, Melville, Johannesburg, 2109</p>
-        <P>Opening Hours : Mon&ndash;Fri 07:00&ndash;18:00 | Sat 08:00&ndash;14:00 | Closed Sunday</P>
-        <p><a href="https://www.facebook.com/">Follow us on Facebook</a></p>
+        <p>Opening Hours: Mon&ndash;Fri 07:00&ndash;18:00 | Sat 08:00&ndash;14:00 | Closed Sunday</p>
+        <p><a href="https://www.facebook.com/" target="_blank" rel="noopener">Follow us on Facebook</a></p>
         <p><a href="contact.html">Contact Sollie's Bakery</a></p>
-        <p>&copy;2026 Sollie's Bakery. All rights reserved.</p>
+        <p>&copy; 2026 Sollie's Bakery. All rights reserved.</p>
     </footer>
 </body>
 </html>

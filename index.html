@@ -3,85 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sollie's Bakery | Freshly Baked with care</title>
-    <!-- Part 2: external stylesheet linked here. Global styles, typography and responsive rules all live in css/style.css-->
-    <link rel="sytlesheet" href="css/style.css">
+    <title>Sollie's Bakery | Freshly Baked with Care</title>
+    
+    <!-- Google Fonts Import for Playfair Display & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Part 2 External Stylesheet Link -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!--Site header:bakery name/tagline and the primary navigation menu.This header + nav block is identical on every page so the site has one consistent navigation system-->
+    <!-- Site Header: Bakery Name, Tagline, and Navigation Menu -->
     <header>
-        <h1>Sollie's Bakery</h1>
-        <p>Freshly baked, everyday ,in the heart of johannesburg</p>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="enquiry.html">Custom Order</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-container">
+            <div class="brand">
+                <a href="index.html" class="logo">Sollie's <span>Bakery</span></a>
+                <p class="tagline">Freshly baked, everyday, in the heart of Johannesburg</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="enquiry.html">Custom Order</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <!-- Hero banner:first thing a visitor sees, with the main call to action-->
-        <section id="hero">
-            <h2>Freshly Baked, Made with Care</h2>
-            <p>Warm bread, delicate pastries and custom celebration cakes made with locally sourced ingredients and genuine care</p>
-            <p><a href="enquiry.html">Order Now</a></p>
+
+    <main class="container">
+        <!-- Hero Banner Section -->
+        <section class="hero">
+            <h1>Freshly Baked, Made with Care</h1>
+            <p>Warm bread, delicate pastries and custom celebration cakes made with locally sourced ingredients and genuine care.</p>
+            <a href="enquiry.html" class="btn-primary">Order Now</a>
         </section>
-        <!--Short intro to the bakery,linking throgh to the full About page. -->
-        <section id="intro">
+
+        <!-- Short Intro Section -->
+        <section class="intro-section">
             <h2>Welcome to Sollie's Bakery</h2>
-            <P>Sollie's Bakery is a small ,family-run bakery estalblished in 2019 in johannesburg,South Africa.What began as a home based baking operation selling bread and cupcakes to neighbours has grown into a storefront serving fresh bread,pastries and custom celebration cakes for the local community</P>
-            <p><a href="about.html">Learn more about our story</a></p>
+            <p>Sollie's Bakery is a small, family-run bakery established in 2019 in Johannesburg, South Africa. What began as a home-based baking operation selling bread and cupcakes to neighbours has grown into a storefront serving fresh bread, pastries and custom celebration cakes for the local community.</p>
+            <a href="about.html" class="btn-secondary">Learn more about our story &rarr;</a>
         </section>
-        <!-- Featured products pulled from the full menu, to tempt visitors through to the Products page. -->
-        <section id="featured-prdoucts">
+
+        <!-- Featured Products Section -->
+        <section class="featured-section">
             <h2>Featured Products</h2>
-            <article class="product">
-                <img src="images/sourdough-loaf.jpg" alt="Freshly baked sourdough loaf with a golden crust" width="300" height="300">
-                <h3>Sourdough Loaf</h3>
-                <p>Slow-fermented, crusty on the outside,soft within</p>
-                <p>R40</p>
-            </article>
-            <article class="product">
-                <img src="images/celebration-cake.jpg" alt="Decorated three-tier vannila celebration cake" width="300" height="300">
-                <h3>Celebration cake</h3>
-                <p>Custom-designed cakes for birthdays ,Weddings and events</p>
-                <p>From R350</p>
-            </article>
+            <div class="product-grid">
+                <article class="product-card">
+                    <img src="images/sourdough-loaf.jpg" alt="Freshly baked sourdough loaf with a golden crust">
+                    <div class="product-card-body">
+                        <h3>Sourdough Loaf</h3>
+                        <p class="price">R40</p>
+                        <p>Slow-fermented, crusty on the outside, soft within.</p>
+                        <a href="enquiry.html" class="btn-primary">Order Item</a>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <img src="images/celebration-cake.jpg" alt="Decorated three-tier vanilla celebration cake">
+                    <div class="product-card-body">
+                        <h3>Celebration Cake</h3>
+                        <p class="price">From R350</p>
+                        <p>Custom-designed cakes for birthdays, weddings, and special events.</p>
+                        <a href="enquiry.html" class="btn-primary">Order Item</a>
+                    </div>
+                </article>
+            </div>
         </section>
-        <!--Customer testimonials, shown on the homepage per the writeframe,to build trust beofre a visitor commits to an order. -->
-        <section id="testimonials">
-            <h2>What our Customers Say</h2>
-            <article class="testimonials">
-                <blockquote>
-                    <p>The sourdough at Sollie's is the best I've found in joburg.It's now a Weekly Staple in our our house</p>
-                </blockquote>
-                <p>&mdash; Thandi M ,Local resident</p>
-            </article>
-            <article class="testimonials">
-                <blockquote>
-                    <p>Sollie's made our wedding cake exactly as we imagined it.The whole process was easy and the team was so accommodating.</p>
-                </blockquote>
-                <p>&mdash; Kabelo N ,bride</p>
-            </article>
-            <article class="testimonials">
-                <blockquote>
-                    <p>Reliable,friendly and consistently fresh . Our office now orders pastries from Sollie's for every team breakfast</p>
-                </blockquote>
-                <p>&mdash; Lerato S ,Office manager</p>
-            </article>
+
+        <!-- Customer Testimonials Section -->
+        <section class="testimonials-section">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <article class="testimonial-card">
+                    <blockquote>
+                        <p>"The sourdough at Sollie's is the best I've found in Joburg. It's now a weekly staple in our house."</p>
+                    </blockquote>
+                    <p class="author">&mdash; Thandi M., Local resident</p>
+                </article>
+
+                <article class="testimonial-card">
+                    <blockquote>
+                        <p>"Sollie's made our wedding cake exactly as we imagined it. The whole process was easy and the team was so accommodating."</p>
+                    </blockquote>
+                    <p class="author">&mdash; Kabelo N., Bride</p>
+                </article>
+
+                <article class="testimonial-card">
+                    <blockquote>
+                        <p>"Reliable, friendly and consistently fresh. Our office now orders pastries from Sollie's for every team breakfast."</p>
+                    </blockquote>
+                    <p class="author">&mdash; Lerato S., Office Manager</p>
+                </article>
+            </div>
         </section>
     </main>
-    <!--Site footer:contact snippet,hours and social links, repeated on every page -->
+
+    <!-- Site Footer Section -->
     <footer>
-        <p>Sollie's Bakery, 12 Baker Street, Melville, Johannesburg, 2109</p>
-        <P>Opening Hours : Mon&ndash;Fri 07:00&ndash;18:00 | Sat 08:00&ndash;14:00 | Closed Sunday</P>
-        <p><a href="https://www.facebook.com/">Follow us on Facebook</a></p>
-        <p><a href="contact.html">Contact Sollie"s Bakery</a></p>
-        <p>&copy;2026 Sollie's Bakery. All rights reserved.</p>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4>Sollie's Bakery</h4>
+                <p>12 Baker Street, Melville<br>Johannesburg, 2109</p>
+            </div>
+            <div class="footer-column">
+                <h4>Opening Hours</h4>
+                <p>Mon&ndash;Fri: 07:00&ndash;18:00<br>Sat: 08:00&ndash;14:00<br>Closed Sunday</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Follow us on Facebook</a></li>
+                    <li><a href="contact.html">Contact Sollie's Bakery</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sollie's Bakery. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
