@@ -1,0 +1,815 @@
+/* =========================================================
+   SOLLIE'S BAKERY — style.css
+     Step 1: Global Foundation:(base styles only — header/nav, homepage, products, forms, footer and responsive rules are added in later steps)
+   ========================================================= */
+/* -----------------------------------------------------------
+   1. Google Fonts
+   Playfair Display (headings) + Poppins (body)
+   ----------------------------------------------------------- */
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
+
+/* -----------------------------------------------------------
+   2. CSS Variables Centralising the colour palette and font stacks here means every later rule can reference var(--terracotta) etc. instead of repeating hex codes — this is the "cascading,minimum number of selectors" principle from the brief
+   ----------------------------------------------------------- */
+:root {
+    /* Colours, ffrom the proposal's Design and UX section */
+    --terracotta: #B5651D;
+    --cream: #FBF4E6;
+    --mustard: #D9A441;
+    --text-dark: #3A2E22;
+    --text-muted: #6B5D4F;
+    --white: #FFFFFF;
+    /* Typography */
+    --font-heading: 'Playfair Display', Georgia, serif;
+    --font-body: 'Poppins', 'Segoe UI', sans-serif;
+
+    /* Spacing scale (rem-based, so it respects the user's browser font-size setting — see the Part 2 brief on relative units for responsiveness)*/
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2.5rem;
+    --space-xl: 4rem;
+
+    /* Layout constraints */
+    --max-width: 1100px;
+    --radius: 8px;
+}
+/* -----------------------------------------------------------
+   3. CSS Reset Browsers apply their own default margin/padding to elements like <h1>, <p>, and <ul> — this removes those inconsistencies so our spacing is fully intentional, not accidental.
+   ----------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+ul {
+    list-style: none;
+}
+/* -----------------------------------------------------------
+   4. Base Body Styles
+   ----------------------------------------------------------- */
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--cream);
+}
+/* -----------------------------------------------------------
+   5. Headings  Playfair Display gives the bakery an elegant, editorial feel for h1–h3; line-height is tighter on headings than body text, which is standard typographic practice for larger text sizes.
+   ----------------------------------------------------------- */
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--terracotta);
+    line-height: 1.25;
+    margin-bottom: var(--space-sm);
+}
+h1 { font-size: 2.25rem; 
+}
+h2 { font-size: 1.75rem; text-align: center;
+}
+h3 { font-size: 1.25rem; 
+}
+h4 { font-size: 1.1rem;
+}
+/* -----------------------------------------------------------
+   6. Paragraphs and Links
+   ----------------------------------------------------------- */
+p {
+    margin-bottom: var(--space-sm);
+    color: var(--text-muted);
+}
+a {
+    color: var(--terracotta);
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+a:hover,
+a:focus {
+    color: var(--mustard);
+}
+/* -----------------------------------------------------------
+   7. General Section Spacing A consistent rhythm between sections on every page, before any page-specific layout (Grid/Flexbox) is added in later steps.
+   ----------------------------------------------------------- */
+main {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-md);
+}
+
+section {
+    margin-bottom: var(--space-xl);
+}
+/* =========================================================
+   Step 2: Header & Navigation
+   ========================================================= */
+header {
+    background-color: var(--terracotta);
+    color: var(--white);
+    padding: var(--space-md) var(--space-md) 0;
+    text-align: center;
+}
+/* Heading and tagline sit on the terracotta header background,so they override the default heading/paragraph colours. */
+header h1 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: var(--space-xs);
+}
+header p {
+    color: var(--cream);
+    margin-bottom: var(--space-md);
+}
+/* Flexbox nav bar: links laid out in a row, evenly spaced,wrapping onto a new line automatically if the screen is too narrow to fit them all (a first, simple step toward  responsiveness — full breakpoints come in Step 9). */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm) var(--space-lg);
+    padding-bottom: var(--space-md);
+}
+nav a {
+    color: var(--white);
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    padding: var(--space-xs) 0;
+    border-bottom: 2px solid transparent;
+}
+/* Pseudo-classes: a visible, animated underline on hover/focus/active gives clear feedback that the nav links are interactive. */
+nav a:hover,
+nav a:focus {
+    color: var(--mustard);
+    border-bottom-color: var(--mustard);
+}
+nav a:active {
+    color: var(--cream);
+}
+/* =========================================================
+   Step 3: Homepage
+   ========================================================= */
+#hero {
+    text-align: center;
+    background-color: var(--white);
+    border-radius: var(--radius, 8px);
+    padding: var(--space-lg) var(--space-md);
+    box-shadow: 0 2px 10px rgba(58, 46, 34, 0.08);
+}
+#hero h2 {
+    font-size: 2rem;
+}
+
+#hero p {
+    max-width: 40ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* The "Order Now" / call-to-action link, styled as a real button.Re-used on the products and enquiry pages via the same selector. */
+#hero a,
+.cta-button {
+    display: inline-block;
+    background-color: var(--terracotta);
+    color: var(--white);
+    font-weight: 600;
+    padding: 0.75rem 1.75rem;
+    border-radius: 999px;
+    margin-top: var(--space-xs);
+}
+#hero a:hover,
+#hero a:focus,
+.cta-button:hover,
+.cta-button:focus {
+    background-color: var(--mustard);
+    color: var(--text-dark);
+}
+#intro {
+    text-align: center;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Product Cards Grid Layout CSS Grid lays out as many columns as fit,collapsing naturally on narrower screens even before the Step 9 media queries kick in */
+#featured-products ul,
+#featured-products {
+    display: grid;
+}
+ 
+#featured-products {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+}
+.product,
+.team-member,
+.testimonial {
+    background-color: var(--white);
+    border: 1px solid rgba(58, 46, 34, 0.12);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    text-align: center;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.product:hover,
+.team-member:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(58, 46, 34, 0.12);
+}
+.product img,
+.team-member img {
+    border-radius: var(--radius, 8px);
+    margin: 0 auto var(--space-xs);
+}
+.product h3,
+.product h4 {
+    margin-bottom: var(--space-xs);
+}
+/* Testimonials Grid */
+.testimonials-section {
+    margin-bottom: var(--space-xl);
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+}
+
+.testimonial-card {
+    background-color: var(--cream);
+    border: 1px solid rgba(58, 46, 34, 0.12);
+    border-radius: var(--radius);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card blockquote {
+    margin: 0 0 var(--space-sm) 0;
+    font-style: italic;
+    color: var(--text-dark);
+}
+
+.testimonial-card .author {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--terracotta);
+    margin: 0;
+}
+
+/* Button UI Components */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--terracotta);
+    color: var(--white);
+    font-weight: 600;
+    padding: 0.65rem 1.75rem;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--mustard);
+    color: var(--text-dark);
+}
+
+.btn-secondary {
+    display: inline-block;
+    color: var(--terracotta);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+    color: var(--mustard);
+}
+
+/* Multi-Column Footer Layout */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-md);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.footer-column h4 {
+    color: var(--mustard);
+    margin-bottom: var(--space-xs);
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-column a {
+    color: var(--cream);
+    text-decoration: none;
+}
+
+.footer-column a:hover {
+    color: var(--mustard);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: var(--space-sm);
+    font-size: 0.875rem;
+}
+/* =========================================================
+   Step 4: About Page
+   ========================================================= */
+/* Main About Page sections */
+
+#mission-vision,
+#what-we-value,
+#team {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section headings */
+
+#mission-vision h2,
+#what-we-value h2,
+#team h2 {
+    color: var(--terracotta);
+    text-align: center;
+    margin-bottom: var(--space-md);
+}
+
+/* Mission and Vision */
+
+#mission-vision {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+    align-items: start;
+}
+
+#mission-vision > div,
+#mission-vision > article {
+    min-width: 0;
+}
+
+/* Mission and Vision headings */
+
+#mission-vision h3 {
+    color: var(--terracotta);
+    text-align: center;
+    margin-bottom: var(--space-sm);
+}
+
+/* Mission and Vision paragraphs */
+
+#mission-vision p {
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* What We Value */
+
+#what-we-value {
+    margin-top: var(--space-lg);
+}
+
+#what-we-value ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-sm);
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#what-we-value li {
+    background-color: var(--white);
+    border-left: 4px solid var(--mustard);
+    padding: var(--space-sm);
+    border-radius: 6px;
+}
+
+/* Meet the Team */
+
+#team {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-lg);
+    align-items: start;
+    margin-top: var(--space-lg);
+}
+
+/* Make the Meet the Team heading span the full row */
+
+#team > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+/* Team member images */
+.team-member img {
+    display: block;
+    margin: 0 auto var(--space-sm);
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+/* Team member headings */
+.team-member h3 {
+    color: var(--terracotta);
+    margin-bottom: var(--space-sm);
+}
+/* Team member descriptions */
+.team-member p {
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* =========================================================
+   Step 5: Products Page
+   ========================================================= */
+#bread h3,
+#pastries h3,
+#cakes h3 {
+    display: inline-block;
+    border-bottom: 3px solid var(--mustard);
+    padding-bottom: 0.25rem;
+    margin-bottom: var(--space-sm);
+}
+ 
+#bread ul,
+#pastries ul,
+#cakes ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+}
+ 
+.product p:last-of-type {
+    font-weight: 600;
+    color: var(--terracotta);
+}
+/* =========================================================
+   Step 6: Custom Order Enquiry Form
+   ========================================================= */
+#enquiry-intro {
+    max-width: 65ch;
+    margin: 0 auto var(--space-lg);
+}
+#enquiry-form form {
+    max-width: 800px;
+    margin: 0 auto;
+}
+fieldset {
+    border: 0.5px solid rgba(58, 46, 34, 0.15);
+    border-radius: var(--radius, 8px);
+    padding: var(--space-md);
+    margin-bottom: var(--space-md);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-sm) var(--space-md);
+}
+legend {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--terracotta);
+    padding: 0 var(--space-xs);
+    grid-column: 1 / -1;
+}
+label {
+    display: block;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+input,
+select,
+textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid rgba(58, 46, 34, 0.25);
+    border-radius: var(--radius);
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+/* Focus state: a visible terracotta ring, meeting the brief's requirement to style interactive elements with pseudo-classes. */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--terracotta);
+    box-shadow: 0 0 0 3px rgba(181, 101, 29, 0.2);
+    background-color: var(--white);
+}
+textarea {
+    resize: vertical;
+}
+/* Full-width form rows (textarea, submit button) span every column of the fieldset/form grid instead of sharing a row. */
+.field-full {
+    grid-column: 1 / -1;
+}
+button[type="submit"] {
+    display: inline-block;
+    width: auto;
+    background-color: var(--terracotta);
+    color: var(--white);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+button[type="submit"]:hover,
+button[type="submit"]:focus {
+    background-color: var(--mustard);
+    color: var(--text-dark);
+}
+button[type="submit"]:active {
+    background-color: #a8842f;
+}
+/* =========================================================
+   Step 7: Contact Page
+   ========================================================= */
+.contact-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+#contact-details,
+#locations,
+#contact-form {
+    background-color: var(--white);
+    border: 1px solid rgba(58, 46, 34, 0.12);
+    border-radius: var(--radius);
+    padding: var(--space-lg);
+}
+
+/* Contact Info & Hours Table */
+.contact-info-block {
+    margin-bottom: var(--space-md);
+}
+
+.hours-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-xs);
+}
+
+.hours-table caption {
+    text-align: left;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xs);
+}
+
+.hours-table th,
+.hours-table td {
+    padding: 0.6rem 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(58, 46, 34, 0.1);
+}
+
+.hours-table th {
+    background-color: var(--cream);
+    color: var(--terracotta);
+    font-weight: 600;
+}
+
+/* Location Cards & Map Placeholder */
+.locations-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+}
+
+.location-card {
+    padding: var(--space-xs) 0;
+}
+
+.location-card address {
+    font-style: normal;
+    color: var(--text-dark);
+}
+
+.market-hours {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+#map-placeholder {
+    margin: 0;
+    text-align: center;
+}
+
+#map-placeholder img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    border: 1px solid rgba(58, 46, 34, 0.15);
+}
+
+#map-placeholder figcaption {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+}
+/* =========================================================
+   Step 8: Footer
+   ========================================================= */
+footer {
+    background-color: var(--text-dark);
+    color: var(--cream);
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    margin-top: var(--space-xl);
+}
+ 
+footer p {
+    color: var(--cream);
+    margin-bottom: var(--space-xs);
+}
+ 
+footer a {
+    color: var(--mustard);
+}
+ 
+footer a:hover,
+footer a:focus {
+    color: var(--white);
+}
+
+/* =========================================================
+   STEP 9: GALLERY LAYOUT
+   ========================================================= */
+
+#gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-md);
+}
+
+/* Gallery heading and description */
+
+#gallery h2,
+#gallery > p {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+
+#gallery h2 {
+    margin-bottom: var(--space-sm);
+}
+
+#gallery > p {
+    margin-bottom: var(--space-md);
+}
+
+/* Gallery cards */
+
+#gallery figure {
+    margin: 0;
+    background-color: var(--white);
+    border: 1px solid rgba(58, 46, 34, 0.12);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(58, 46, 34, 0.1);
+    transition: transform 0.2s ease-in-out,
+                box-shadow 0.2s ease-in-out;
+}
+
+/* Gallery images */
+
+#gallery figure img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Gallery captions */
+
+#gallery figcaption {
+    padding: var(--space-sm);
+    text-align: center;
+    font-weight: 500;
+    color: var(--terracotta);
+}
+
+/* Hover effect */
+
+#gallery figure:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(58, 46, 34, 0.12);
+}
+/* =========================================================
+   Step 10: Responsive Design
+   Two breakpoints: tablet (<=900px) and mobile (<=600px).Mobile-first in spirit (per the proposal) but written as max-width overrides on top of the desktop base above, which keeps every earlier step's CSS as the single source of truth.
+   ========================================================= */
+/* -----------------------------------------------------------
+   Tablet: tighten spacing and let grids drop to 2 columns before the fuller mobile collapse below.
+   ----------------------------------------------------------- */
+@media (max-width: 900px) {
+    main {
+        padding: var(--space-md) var(--space-sm);
+    }
+
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.5rem; }
+
+    #featured-products,
+   .testimonial-grid,
+    #team,
+    #bread ul,
+    #pastries ul,
+    #cakes ul,
+    #locations,
+    #mission-vision {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
+/* -----------------------------------------------------------
+   Mobile: single-column layout, stacked navigation, and smaller type sizes for comfortable reading on a small screen.
+   ----------------------------------------------------------- */
+@media (max-width: 600px) {
+    html {
+        font-size: 15px;
+    }
+ 
+    header {
+        padding: var(--space-sm) var(--space-sm) 0;
+    }
+ 
+    header h1 {
+        font-size: 1.5rem;
+    }
+    /* Nav collapses from a horizontal row to a stacked list-still plain HTML links, no JavaScript hamburger menu,just a layout change at this breakpoint. */
+     nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-xs);
+    }
+ 
+    h1 { font-size: 1.6rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.1rem; }
+ 
+    #hero,
+    .location,
+    fieldset {
+        padding: var(--space-sm);
+    }
+    /* Every card grid becomes a single column on mobile. */
+    #featured-products,
+    .testimonial-grid,
+    #mission-vision,
+    #what-we-value ul,
+    #team,
+    #bread ul,
+    #pastries ul,
+    #cakes ul,
+    #locations,
+    fieldset,
+    #contact-form form {
+        grid-template-columns: 1fr;
+    }
+    /* Images already scale fluidly (img { max-width: 100% } from the Step 1 reset); on mobile the team/product photos also drop to a slightly smaller fixed size so two adjacent  cards don't feel oversized on a narrow screen. */
+    .team-member img {
+        width: 110px;
+        height: 110px;
+    }
+ 
+    button[type="submit"] {
+        width: 100%;
+    }
+}
+
