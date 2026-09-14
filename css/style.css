@@ -196,13 +196,15 @@ nav a:active {
 }
 /* Product Cards Grid Layout CSS Grid lays out as many columns as fit,collapsing naturally on narrower screens even before the Step 9 media queries kick in */
 #featured-products ul,
-#featured-products {
-    display: grid;
+#featured-products,
+#testimonials {
+ display: grid;
 }
- 
-#featured-products {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-md);
+
+#featured-products,
+#testimonials {
+ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+ gap: var(--space-md);
 }
 .product,
 .team-member,
