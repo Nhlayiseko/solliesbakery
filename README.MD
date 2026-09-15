@@ -111,10 +111,6 @@ Real screenshots of `index.html`, rendered from the actual submitted files at ea
 |---|---|---|
 | ![desktop](docs/screenshots/index-desktop.png) | ![tablet](docs/screenshots/index-tablet.png) | ![mobile](docs/screenshots/index-mobile.png) |
 
-Product/team images show as broken-image icons because the real bakery photography hasn't been
-sourced yet &mdash; every `<img>` tag has the correct filename and `alt` text ready for real
-photos to be dropped into the images folder.
-
 ---
 
 ## Sitemap
