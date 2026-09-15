@@ -79,7 +79,7 @@ No JavaScript and no CSS frameworks were used, per the Part 2 brief.
 
 ---
 
-## Known Issues (Honest Status &ndash; To Fix Before Final Submission)
+## Known Issues
 
 Testing the actual submitted HTML/CSS together turned up a few mismatches between class/id names
 in the HTML and the selectors in `style.css`. The CSS itself is solid; these are small naming
