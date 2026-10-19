@@ -34,6 +34,7 @@
     <!-- Part 2 External Stylesheet Link -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
+    <script src="js/gallery.js" defer></script>
 </head>
 <body>
     <header>
@@ -87,5 +88,15 @@
         <p><a href="contact.html">Contact Sollie's Bakery</a></p>
         <p>&copy;2026 Sollie's Bakery. All rights reserved.</p>
     </footer>
+        <!-- Gallery lightbox: hidden until a photo is clicked (controlled by js/gallery.js) -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged gallery photo" hidden>
+        <button type="button" id="lightbox-close" class="lightbox-close" aria-label="Close enlarged photo">&times;</button>
+        <button type="button" id="lightbox-prev" class="lightbox-nav lightbox-prev" aria-label="Previous photo">&#10094;</button>
+        <figure class="lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <figcaption id="lightbox-caption"></figcaption>
+        </figure>
+        <button type="button" id="lightbox-next" class="lightbox-nav lightbox-next" aria-label="Next photo">&#10095;</button>
+    </div>
 </body>
 </html>
