@@ -35,6 +35,7 @@
     
     <!-- Part 2 External Stylesheet Link -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -103,6 +104,44 @@
                 <button type="submit">Submit Enquiry</button>
             </p>
         </form>
+    </section>
+    <!-- FAQ accordion: opened and closed by js/main.js -->
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="accordion">
+            <div class="accordion-item">
+                <h3>
+                    <button type="button" class="accordion-button" id="faq-button-1" aria-expanded="false" aria-controls="faq-panel-1">How much notice do you need for a custom order?</button>
+                </h3>
+                <div class="accordion-panel" id="faq-panel-1" role="region" aria-labelledby="faq-button-1">
+                    <p>Custom orders require at least 5 working days' notice. For large events such as weddings, please enquire as early as you can.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3>
+                    <button type="button" class="accordion-button" id="faq-button-2" aria-expanded="false" aria-controls="faq-panel-2">How do I get a price for my cake?</button>
+                </h3>
+                <div class="accordion-panel" id="faq-panel-2" role="region" aria-labelledby="faq-button-2">
+                    <p>Submit the enquiry form above and our team will reply with a quote. Celebration cakes start from R350 and chocolate drip cakes from R450. Wedding cakes are priced on enquiry.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3>
+                    <button type="button" class="accordion-button" id="faq-button-3" aria-expanded="false" aria-controls="faq-panel-3">What if someone has allergies?</button>
+                </h3>
+                <div class="accordion-panel" id="faq-panel-3" role="region" aria-labelledby="faq-button-3">
+                    <p>Please mention any allergies in the "Tell Us More" box on the form so our team can advise you before you confirm your order.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3>
+                    <button type="button" class="accordion-button" id="faq-button-4" aria-expanded="false" aria-controls="faq-panel-4">Where can I find you?</button>
+                </h3>
+                <div class="accordion-panel" id="faq-panel-4" role="region" aria-labelledby="faq-button-4">
+                    <p>Our storefront is at 12 Baker Street, Melville, Johannesburg. See our <a href="contact.html">contact page</a> for opening hours and our weekend market stall.</p>
+                </div>
+            </div>
+        </div>
     </section>
 </main>
     <!--Site footer:contact snippet,hours and social links, repeated on every page -->
