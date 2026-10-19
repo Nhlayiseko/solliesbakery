@@ -3,8 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Sollie's Bakery</title>
-       <!-- Google Fonts Import for Playfair Display & Poppins -->
+    <!-- ===== SEO: title and description (Part 3) ===== -->
+    <title>Contact &amp; Opening Hours | Sollie's Bakery, Melville Johannesburg</title>
+    <meta name="description" content="Contact Sollie's Bakery in Melville, Johannesburg. Find our opening hours, phone number, email, storefront and weekend market stall, or send us a message.">
+    <meta name="keywords" content="contact Sollie's Bakery, bakery opening hours, Melville bakery, bakery Johannesburg, bakery location, weekend market stall">
+    <meta name="author" content="Sollie's Bakery">
+    <link rel="canonical" href="https://nhlayiseko.github.io/solliesbakery/contact.html">
+
+    <!-- ===== Open Graph (social sharing) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sollie's Bakery">
+    <meta property="og:title" content="Contact &amp; Opening Hours | Sollie's Bakery, Melville Johannesburg">
+    <meta property="og:description" content="Find our opening hours, locations and contact details, or send us a message.">
+    <meta property="og:url" content="https://nhlayiseko.github.io/solliesbakery/contact.html">
+    <meta property="og:image" content="https://nhlayiseko.github.io/solliesbakery/images/celebration-cake.jpg">
+    <meta property="og:image:alt" content="Decorated three-tier vanilla celebration cake">
+    <meta property="og:locale" content="en_ZA">
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact &amp; Opening Hours | Sollie's Bakery, Melville Johannesburg">
+    <meta name="twitter:description" content="Find our opening hours, locations and contact details, or send us a message.">
+    <meta name="twitter:image" content="https://nhlayiseko.github.io/solliesbakery/images/celebration-cake.jpg">
+    <meta name="twitter:image:alt" content="Decorated three-tier vanilla celebration cake">
+
+    <!-- Google Fonts Import for Playfair Display & Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,7 +38,7 @@
 <body>
     <header>
         <h1>Sollie's Bakery</h1>
-        <p>Freshly baked, every day ,in the heart of johannesburg</p>
+        <p>Freshly baked every day, in the heart of Johannesburg</p>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -28,13 +51,17 @@
         </nav>
     </header>
     <main>
-          <!-- Core contact information -->
+    <!-- Contact details and locations sit side by side on desktop (CSS Grid: .contact-layout) -->
+    <div class="contact-layout">
+        <!-- Core contact information -->
         <section id="contact-details">
             <h2>Get In Touch</h2>
-            <P>Phone: <a href="tel:+27110507211">0110507211</a></P>
-            <p>Email: <a href="mailto:info@solliesbakery.co.za">info@solliesbakery.co.za</a></p>
+            <div class="contact-info-block">
+                <p>Phone: <a href="tel:+27110507211">011 050 7211</a></p>
+                <p>Email: <a href="mailto:info@solliesbakery.co.za">info@solliesbakery.co.za</a></p>
+            </div>
             <h3>Opening Hours</h3>
-            <table>
+            <table class="hours-table">
                 <caption>Sollie's Bakery Trading Hours</caption>
                 <thead>
                     <tr>
@@ -44,12 +71,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Monday &ndash;Friday</td>
-                        <td>07:00 &ndash;18:00</td>
+                        <td>Monday &ndash; Friday</td>
+                        <td>07:00 &ndash; 18:00</td>
                     </tr>
                     <tr>
                         <td>Saturday</td>
-                        <td>08:00 &ndash;14:00</td>
+                        <td>08:00 &ndash; 14:00</td>
                     </tr>
                     <tr>
                         <td>Sunday</td>
@@ -58,49 +85,54 @@
                 </tbody>
             </table>
         </section>
-        <!-- Both business locations, as required by the brief (map must show more than one location)Interactive map with both locations to be embedded in Part 3-->
+
+        <!-- Both business locations. The interactive map is added in a later step -->
         <section id="locations">
-            <h2>Find Us</h2>
-            <article class="location">
-                <h3>Main Storefront</h3>
-                <address> 12 Baker Street, Melville, Johannesburg, 2109, South Africa</address>
-            </article>
-             <article class="location">
-                <h3>Weekend Market Stall</h3>
-                <address>Melville Sunday Market, 7th Street, Melville, Johannesburg, 2109, South Africa</address>
-                <p>Saturday 08:00 &ndash; 13:00</p>
-            </article>
+            <h2>Find Us in Melville</h2>
+            <div class="locations-grid">
+                <article class="location-card">
+                    <h3>Main Storefront</h3>
+                    <address>12 Baker Street, Melville, Johannesburg, 2109, South Africa</address>
+                </article>
+                <article class="location-card">
+                    <h3>Weekend Market Stall</h3>
+                    <address>Melville Sunday Market, 7th Street, Melville, Johannesburg, 2109, South Africa</address>
+                    <p class="market-hours">Saturday 08:00 &ndash; 13:00</p>
+                </article>
+            </div>
             <figure id="map-placeholder">
-                <img src="images/map-placeholder.jpg" alt="Map showing the main storefront and Weekend stall locations" width="300" height="300">
-                <figcaption>Interactive map with both locations to be embedded in Part 3</figcaption>
+                <img src="images/map-placeholder.jpg" alt="Map showing the Sollie's Bakery main storefront and weekend market stall in Melville, Johannesburg" width="300" height="300">
+                <figcaption>Map of our two Melville locations</figcaption>
             </figure>
         </section>
-         <!-- General contact form for enquiries not related to a custom order -->
-        <section id="contact-form">
-            <h2>Send Us a Message</h2>
-            <form action="#" method="post">
-                <p>
-                    <label for="name">Full Name</label><br>
-                    <input type="text" id="name" name="name"required>
-                </p>
-                <p>
-                    <label for="email">Email Address</label><br>
-                    <input type="email" id="email" name="email"required>
-                </p>
-                <p>
-                    <label for="subject">Subject</label><br>
-                    <input type="text" id="subject" name="subject"required>
-                </p>
-                <p>
-                    <label for="message">Message</label><br>
-                    <textarea id="message" name="message" rows="6" cols="40" required></textarea>
-                </p>
-                <p>
-                    <button type="submit">Send Message</button>
-                </p>
-            </form>
-        </section>
-    </main>
+    </div>
+
+    <!-- General contact form for enquiries not related to a custom order -->
+    <section id="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contact-form-element" action="#" method="post">
+            <p>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+            </p>
+            <p>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+            </p>
+            <p>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </p>
+            <p>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </p>
+            <p>
+                <button type="submit">Send Message</button>
+            </p>
+        </form>
+    </section>
+</main>
     <!--Site footer:contact snippet,hours and social links, repeated on every page -->
      <footer>
         <p>Sollie's Bakery, 12 Baker Street, Melville, Johannesburg, 2109</p>
