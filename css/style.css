@@ -891,3 +891,111 @@ main h1 {
     margin-left: auto;
     margin-right: auto;
 }
+/* =========================================================
+   Part 3: Mobile menu toggle (button is created by js/main.js)
+   ========================================================= */
+.nav-toggle {
+    display: none;   /* hidden on desktop and tablet */
+}
+
+@media (max-width: 600px) {
+    .nav-toggle {
+        display: block;
+        margin: 0 auto var(--space-sm);
+        padding: 0.5rem 1.5rem;
+        background-color: transparent;
+        color: var(--white);
+        border: 2px solid var(--white);
+        border-radius: 999px;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    }
+
+    .nav-toggle:hover,
+    .nav-toggle:focus {
+        background-color: var(--mustard);
+        border-color: var(--mustard);
+        color: var(--text-dark);
+    }
+
+    /* Space under the button while the menu is closed */
+    nav.nav-collapsible:not(.open) {
+        padding-bottom: var(--space-md);
+    }
+
+    /* Links are hidden until the button adds the "open" class */
+    nav.nav-collapsible ul {
+        display: none;
+    }
+
+    nav.nav-collapsible.open ul {
+        display: flex;
+    }
+}
+
+/* =========================================================
+   Part 3: FAQ accordion
+   ========================================================= */
+#faq {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#faq h2 {
+    margin-bottom: var(--space-md);
+}
+
+.accordion-item {
+    background-color: var(--white);
+    border: 1px solid rgba(58, 46, 34, 0.12);
+    border-radius: var(--radius);
+    margin-bottom: var(--space-xs);
+    overflow: hidden;
+}
+
+.accordion-item h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.accordion-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-sm);
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    background-color: transparent;
+    border: none;
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Plus sign when closed, minus sign when open */
+.accordion-button::after {
+    content: '+';
+    font-size: 1.4rem;
+    color: var(--mustard);
+}
+
+.accordion-button[aria-expanded="true"]::after {
+    content: '\2212';
+}
+
+.accordion-button:hover,
+.accordion-button:focus {
+    background-color: var(--cream);
+}
+
+.accordion-panel {
+    padding: 0 var(--space-md) var(--space-sm);
+}
