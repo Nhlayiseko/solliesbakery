@@ -999,3 +999,114 @@ main h1 {
 .accordion-panel {
     padding: 0 var(--space-md) var(--space-sm);
 }
+
+/* =========================================================
+   Part 3: Gallery lightbox
+   ========================================================= */
+
+/* Hint that gallery photos can be clicked */
+#gallery figure img {
+    cursor: zoom-in;
+}
+
+#gallery figure img:focus {
+    outline: 3px solid var(--mustard);
+    outline-offset: -3px;
+}
+
+/* Dark overlay that covers the whole screen */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background-color: rgba(30, 22, 15, 0.92);
+}
+
+/* The [hidden] attribute must beat display: flex above */
+.lightbox[hidden] {
+    display: none;
+}
+
+/* Stop the page scrolling behind the open lightbox */
+body.lightbox-open {
+    overflow: hidden;
+}
+
+.lightbox-content {
+    margin: 0;
+    max-width: 900px;
+    text-align: center;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-content figcaption {
+    margin-top: var(--space-sm);
+    color: var(--cream);
+    font-weight: 500;
+}
+
+/* Close and arrow buttons */
+.lightbox-close,
+.lightbox-nav {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus,
+.lightbox-nav:hover,
+.lightbox-nav:focus {
+    background-color: var(--mustard);
+    color: var(--text-dark);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-size: 2rem;
+}
+
+/* On phones, move the arrows below the photo so the photo can be larger */
+@media (max-width: 600px) {
+    .lightbox {
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+    .lightbox-content {
+        order: 1;
+        flex-basis: 100%;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        order: 2;
+    }
+
+    .lightbox-content img {
+        max-height: 60vh;
+    }
+}
