@@ -3,8 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Order Enquiry | Sollie's Bakery</title>
-        <!-- Google Fonts Import for Playfair Display & Poppins -->
+
+    <!-- ===== SEO: title and description (Part 3) ===== -->
+    <title>Custom Cake Order &amp; Catering Enquiry | Sollie's Bakery Johannesburg</title>
+    <meta name="description" content="Request a quote for a custom wedding cake, birthday cake or corporate catering from Sollie's Bakery in Johannesburg. Fill in our enquiry form and we will get back to you.">
+    <meta name="keywords" content="custom cake order, wedding cake quote, birthday cake order, corporate catering, cake enquiry Johannesburg, Melville bakery">
+    <meta name="author" content="Sollie's Bakery">
+    <link rel="canonical" href="https://nhlayiseko.github.io/solliesbakery/enquiry.html">
+
+    <!-- ===== Open Graph (social sharing) ===== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sollie's Bakery">
+    <meta property="og:title" content="Custom Cake Order &amp; Catering Enquiry | Sollie's Bakery Johannesburg">
+    <meta property="og:description" content="Planning a birthday, wedding or corporate event? Request a quote for a custom cake or catering order.">
+    <meta property="og:url" content="https://nhlayiseko.github.io/solliesbakery/enquiry.html">
+    <meta property="og:image" content="https://nhlayiseko.github.io/solliesbakery/images/celebration-cake.jpg">
+    <meta property="og:image:alt" content="Decorated three-tier vanilla celebration cake">
+    <meta property="og:locale" content="en_ZA">
+
+    <!-- ===== Twitter Card ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Custom Cake Order &amp; Catering Enquiry | Sollie's Bakery Johannesburg">
+    <meta name="twitter:description" content="Planning a birthday, wedding or corporate event? Request a quote for a custom cake or catering order.">
+    <meta name="twitter:image" content="https://nhlayiseko.github.io/solliesbakery/images/celebration-cake.jpg">
+    <meta name="twitter:image:alt" content="Decorated three-tier vanilla celebration cake">
+
+    <!-- Google Fonts Import for Playfair Display & Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -15,7 +39,7 @@
 <body>
     <header>
         <h1>Sollie's Bakery</h1>
-        <p>Freshly baked, everyday,in the heart of johannesburg</p>
+        <p>Freshly baked every day, in the heart of johannesburg</p>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -28,59 +52,59 @@
         </nav>
     </header>
     <main>
-        <section id="enquiry-intro">
-            <h2>Custom Order Enquiry</h2>
-            <p> Planning a birthday,wedding or corporate event? Tell us what you have in mind and our team will get back to you with a quote.Custom orders require at least 5 working days' notice.</p>
-        </section>
-        <!-- Custom order enquiry form .Structural only for now; client-side validation and submission handling arrive with JavaScript in Part 3-->
-        <section id="enquiry-form">
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Your Details</legend>
-                    <p>
-                        <label for="full-name">Full Name</label><br>
-                    <input type="text" id="full-name" name="full-name"required>
+    <section id="enquiry-intro">
+        <h2>Custom Cake Order &amp; Catering Enquiry</h2>
+        <p>Planning a birthday, wedding or corporate event? Tell us what you have in mind and our team will get back to you with a quote. Custom orders require at least 5 working days' notice.</p>
+    </section>
+    <!-- Custom order enquiry form. Client-side validation and submission handling are added with JavaScript (js/enquiry.js) -->
+    <section id="enquiry-form">
+        <form id="enquiry-form-element" action="#" method="post">
+            <fieldset>
+                <legend>Your Details</legend>
+                <p>
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" autocomplete="name" required>
                 </p>
-                    <p>
-                        <label for="email">Email Address</label><br>
-                    <input type="email" id="email" name="email" required>
+                <p>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
                 </p>
-                    <p>
-                        <label for="phone">Phone Number</label><br>
-                    <input type="tel" id="phone" name="phone">
+                <p>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="e.g. 082 123 4567">
                 </p>
-                </fieldset>
-                <fieldset>
-                    <legend>Order Details</legend>
-                    <p>
-                        <label for="order-type">Order Type</label><br>
-                    <select id="order-type" name="order-type">
-                        <option value="birthday-Cake">Birthday Cake</option>
-                        <option value="Wedding-Cake">Wedding Cake</option>
+            </fieldset>
+            <fieldset>
+                <legend>Order Details</legend>
+                <p>
+                    <label for="order-type">Order Type</label>
+                    <select id="order-type" name="order-type" required>
+                        <option value="">Select an order type</option>
+                        <option value="birthday-cake">Birthday Cake</option>
+                        <option value="wedding-cake">Wedding Cake</option>
                         <option value="corporate-catering">Corporate Catering</option>
                         <option value="other">Other</option>
                     </select>
-                    </p>
-                    <P>
-                        <label for="event-date">Date Needed</label><br>
-                        <input type="date" id="event-date" name="event-date">
-                    </P>
-                    <p>
-                        <label for="servings">Approximate Number of Servings</label><br>
-                        <input type="number" id="servings" name="servings" min="1">
-                    </p>
-                    <p>
-                    <label for="details">Tell us More</label><br>
-                    <textarea id="details" name="details" rows="6" cols="40"
-                    placeholder="Flavour,theme,colours,budget,allergies,etc"></textarea>
                 </p>
-                </fieldset>
                 <p>
-                    <button type="submit">Submit Enquiry</button>
+                    <label for="event-date">Date Needed</label>
+                    <input type="date" id="event-date" name="event-date" required>
                 </p>
-            </form>
-        </section>
-    </main>
+                <p>
+                    <label for="servings">Approximate Number of Servings</label>
+                    <input type="number" id="servings" name="servings" min="1" required>
+                </p>
+                <p class="field-full">
+                    <label for="details">Tell Us More</label>
+                    <textarea id="details" name="details" rows="6" placeholder="Flavour, theme, colours, budget, allergies, etc."></textarea>
+                </p>
+            </fieldset>
+            <p>
+                <button type="submit">Submit Enquiry</button>
+            </p>
+        </form>
+    </section>
+</main>
     <!--Site footer:contact snippet,hours and social links, repeated on every page -->
 <footer>
         <p>Sollie's Bakery, 12 Baker Street, Melville, Johannesburg, 2109</p>
