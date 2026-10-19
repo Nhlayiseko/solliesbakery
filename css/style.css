@@ -871,3 +871,23 @@ main h1 {
     header .site-name { font-size: 1.5rem; }
     main h1 { font-size: 1.3rem; }
 }
+/* =========================================================
+   Part 3: Layout fixes from Part 2 review
+   ========================================================= */
+
+/* Section headings inside card grids span the full row,
+   instead of taking up one card-sized column */
+#featured-products > h2,
+#testimonials > h2,
+#mission-vision > h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+}
+
+/* About page: centre the "Who We Serve" text like the home page intro */
+#who-we-serve {
+    text-align: center;
+    max-width: 65ch;
+    margin-left: auto;
+    margin-right: auto;
+}
