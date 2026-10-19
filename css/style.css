@@ -814,4 +814,60 @@ footer a:focus {
         width: 100%;
     }
 }
+/* =========================================================
+   Part 3: Heading hierarchy (SEO)
+   The header's site name is now a <p>, and each page has one <h1>.
+   These rules keep the visual design identical to Part 2.
+   ========================================================= */
 
+/* Site name in the header: styled like the old header h1 */
+header .site-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--white);
+    line-height: 1.25;
+    margin-bottom: var(--space-xs);
+}
+
+/* Page-level h1 looks like the old h2 */
+main h1 {
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+#hero h1 {
+    font-size: 2rem;
+}
+
+#gallery h1 {
+    grid-column: 1 / -1;
+    margin-bottom: var(--space-sm);
+}
+
+/* Products page: category headings are now h2, product names are h3 */
+#bread h2,
+#pastries h2,
+#cakes h2 {
+    display: inline-block;
+    font-size: 1.25rem;
+    text-align: left;
+    border-bottom: 3px solid var(--mustard);
+    padding-bottom: 0.25rem;
+    margin-bottom: var(--space-sm);
+}
+
+#bread .product h3,
+#pastries .product h3,
+#cakes .product h3 {
+    font-size: 1.1rem;
+}
+
+@media (max-width: 900px) {
+    main h1 { font-size: 1.5rem; }
+}
+
+@media (max-width: 600px) {
+    header .site-name { font-size: 1.5rem; }
+    main h1 { font-size: 1.3rem; }
+}
