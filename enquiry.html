@@ -36,6 +36,7 @@
     <!-- Part 2 External Stylesheet Link -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
+    <script src="js/enquiry.js" defer></script>
 </head>
 <body>
     <header>
@@ -59,7 +60,13 @@
     </section>
     <!-- Custom order enquiry form. Client-side validation and submission handling are added with JavaScript (js/enquiry.js) -->
     <section id="enquiry-form">
-        <form id="enquiry-form-element" action="#" method="post">
+        <form id="enquiry-form-element" action="https://formspree.io/f/mdearzgo" method="post" novalidate>
+            <!-- Formspree extras: email subject line, and a hidden spam trap that real visitors never see -->
+            <input type="hidden" name="_subject" value="New custom order enquiry - Sollie's Bakery">
+            <p class="honeypot" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </p>
             <fieldset>
                 <legend>Your Details</legend>
                 <p>
@@ -104,6 +111,8 @@
                 <button type="submit">Submit Enquiry</button>
             </p>
         </form>
+        <!-- Success and error messages appear here (js/enquiry.js) -->
+        <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
     </section>
     <!-- FAQ accordion: opened and closed by js/main.js -->
     <section id="faq">
