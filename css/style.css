@@ -1110,3 +1110,93 @@ body.lightbox-open {
         max-height: 60vh;
     }
 }
+/* =========================================================
+   Part 3: Menu search and filter (products page)
+   ========================================================= */
+
+/* Anything with the hidden attribute must really disappear,
+   even if another CSS rule sets its display (used by search.js) */
+[hidden] {
+    display: none !important;
+}
+
+#menu-controls {
+    max-width: 800px;
+    margin: var(--space-md) auto;
+    padding: var(--space-md);
+    background-color: var(--white);
+    border: 1px solid rgba(58, 46, 34, 0.12);
+    border-radius: var(--radius);
+}
+
+#menu-controls .search-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+#menu-controls label {
+    flex-basis: 100%;
+    font-weight: 600;
+}
+
+#menu-search {
+    flex: 1 1 200px;
+    padding: 0.6rem 1rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border: 2px solid var(--cream-dark, #e6d9bd);
+    border-radius: var(--radius);
+}
+
+#menu-search:focus {
+    outline: none;
+    border-color: var(--mustard);
+}
+
+.clear-button,
+.filter-button {
+    padding: 0.6rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    background-color: var(--white);
+    border: 2px solid var(--terracotta);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.clear-button:hover,
+.clear-button:focus,
+.filter-button:hover,
+.filter-button:focus {
+    background-color: var(--mustard);
+    border-color: var(--mustard);
+    color: var(--text-dark);
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-xs);
+    margin-top: var(--space-sm);
+}
+
+/* The chosen category button is filled in */
+.filter-button.active {
+    background-color: var(--terracotta);
+    color: var(--white);
+}
+
+.search-status {
+    margin: var(--space-sm) 0 0;
+    font-size: 0.95rem;
+}
+
+.search-status.no-results {
+    font-weight: 600;
+    color: var(--terracotta);
+}
