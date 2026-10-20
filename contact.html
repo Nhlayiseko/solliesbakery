@@ -34,8 +34,8 @@
     
     <!-- Part 2 External Stylesheet Link -->
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/main.js" defer></script>
     <script src="js/map.js" defer></script>
+    <script src="js/contact.js" defer></script>
 </head>
 <body>
     <header>
@@ -135,7 +135,11 @@
     <!-- General contact form for enquiries not related to a custom order -->
     <section id="contact-form">
         <h2>Send Us a Message</h2>
-        <form id="contact-form-element" action="#" method="post">
+       <form id="contact-form-element" action="https://formspree.io/f/mdearzgo" method="post" novalidate>
+            <!-- Hidden spam trap that real visitors never see (Formspree ignores messages that fill it in) -->
+            <p class="honeypot" aria-hidden="true">
+                <label for="website">Leave this field empty</label>
+                <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
             <p>
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" autocomplete="name" required>
@@ -156,6 +160,8 @@
                 <button type="submit">Send Message</button>
             </p>
         </form>
+        <!-- Success and error messages appear here (js/contact.js) -->
+            <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
     </section>
 </main>
     <!--Site footer:contact snippet,hours and social links, repeated on every page -->
