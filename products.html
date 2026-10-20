@@ -33,6 +33,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
+    <script src="js/search.js" defer></script>
 </head>
 <body>
     <header>
@@ -52,7 +53,23 @@
     <main>
         <h1>Our Menu: Fresh Bread, Pastries &amp; Cakes</h1>
         <p>Sollie's Bakery provides freshly baked products for every customers and special occcasions</p>
-        <p>All items are baked fresh daily using locally sourced ingredients</p>
+        <p>All items are baked fresh daily using locally sourced ingredients.</p>
+
+    <!-- Menu search and category filter (controlled by js/search.js) -->
+    <div id="menu-controls" role="search">
+        <div class="search-row">
+            <label for="menu-search">Search the menu</label>
+            <input type="search" id="menu-search" name="menu-search" placeholder="e.g. sourdough, muffin, wedding" autocomplete="off">
+            <button type="button" id="menu-clear" class="clear-button">Clear</button>
+        </div>
+        <div class="filter-row" role="group" aria-label="Filter by category">
+            <button type="button" class="filter-button active" data-category="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-button" data-category="bread" aria-pressed="false">Bread</button>
+            <button type="button" class="filter-button" data-category="pastries" aria-pressed="false">Pastries</button>
+            <button type="button" class="filter-button" data-category="cakes" aria-pressed="false">Cakes</button>
+        </div>
+        <p id="search-status" class="search-status" aria-live="polite"></p>
+    </div>
         <!-- Bread category-->
         <section id="bread">
             <h2>Bread</h2>
