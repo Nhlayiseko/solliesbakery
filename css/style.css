@@ -1272,3 +1272,94 @@ body.lightbox-open {
         aspect-ratio: 1 / 1;
     }
 }
+/* =========================================================
+   Part 3: Form validation and feedback messages
+   ========================================================= */
+
+/* Error text under a field */
+.error-message {
+    display: block;
+    margin-top: var(--space-xs);
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #b3261e;
+}
+
+.error-message:empty {
+    display: none;
+}
+
+/* Red border on fields with a problem */
+form input[aria-invalid="true"],
+form select[aria-invalid="true"],
+form textarea[aria-invalid="true"] {
+    border-color: #b3261e;
+    border-width: 2px;
+}
+
+/* Success and failure boxes */
+.form-status {
+    max-width: 800px;
+    margin: var(--space-md) auto 0;
+}
+
+.form-status:empty {
+    display: none;
+}
+
+.form-status.success,
+.form-status.failure {
+    padding: var(--space-md);
+    border-radius: var(--radius);
+    text-align: center;
+}
+
+.form-status.success {
+    background-color: #eaf5ea;
+    border: 2px solid #2e7d32;
+    color: #1b4d1f;
+}
+
+.form-status.failure {
+    background-color: #fdecea;
+    border: 2px solid #b3261e;
+    color: #7a1912;
+    font-weight: 600;
+}
+
+.form-status.success h3 {
+    color: #1b4d1f;
+}
+
+.form-status button {
+    margin-top: var(--space-sm);
+    padding: 0.6rem 1.5rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    color: var(--white);
+    background-color: var(--terracotta);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.form-status button:hover,
+.form-status button:focus {
+    background-color: var(--mustard);
+    color: var(--text-dark);
+}
+
+/* Disabled submit button while sending */
+form button[type="submit"]:disabled {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+/* Hidden spam trap field: real visitors never see this */
+.honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
