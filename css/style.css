@@ -1363,3 +1363,18 @@ form button[type="submit"]:disabled {
     height: 1px;
     overflow: hidden;
 }
+/* =========================================================
+   Part 3: Contact form character counter
+   ========================================================= */
+.char-count {
+    display: block;
+    margin-top: var(--space-xs);
+    font-size: 0.85rem;
+    text-align: right;
+    color: var(--text-muted, #6b5d4d);
+}
+
+.char-count.over-limit {
+    color: #b3261e;
+    font-weight: 600;
+}
