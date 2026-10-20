@@ -35,6 +35,7 @@
     <!-- Part 2 External Stylesheet Link -->
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js" defer></script>
+    <script src="js/map.js" defer></script>
 </head>
 <body>
     <header>
@@ -102,10 +103,32 @@
                     <p class="market-hours">Saturday 08:00 &ndash; 13:00</p>
                 </article>
             </div>
-            <figure id="map-placeholder">
-                <img src="images/map-placeholder.jpg" alt="Map showing the Sollie's Bakery main storefront and weekend market stall in Melville, Johannesburg" width="300" height="300">
-                <figcaption>Map of our two Melville locations</figcaption>
-            </figure>
+             <!-- Interactive Google Map: the buttons switch between our two locations (js/map.js) -->
+            <div id="map-section">
+                <h3>Interactive Map</h3>
+                <div class="map-buttons" role="group" aria-label="Choose a location to show on the map">
+                    <button type="button" class="map-button active" aria-pressed="true"
+                        data-name="Main Storefront, 12 Baker Street, Melville"
+                        data-map="https://www.google.com/maps?q=12+Baker+Street,+Melville,+Johannesburg,+2109,+South+Africa&amp;output=embed">Main Storefront</button>
+                    <button type="button" class="map-button" aria-pressed="false"
+                        data-name="Weekend Market Stall, Melville Sunday Market, 7th Street, Melville"
+                        data-map="https://www.google.com/maps?q=Melville+Sunday+Market,+7th+Street,+Melville,+Johannesburg,+2109,+South+Africa&amp;output=embed">Weekend Market Stall</button>
+                </div>
+                <div class="map-container">
+                    <iframe id="map-frame"
+                        src="https://www.google.com/maps?q=12+Baker+Street,+Melville,+Johannesburg,+2109,+South+Africa&amp;output=embed"
+                        title="Map showing Main Storefront, 12 Baker Street, Melville"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allowfullscreen></iframe>
+                </div>
+                <p id="map-caption" class="map-caption">Showing: Main Storefront, 12 Baker Street, Melville</p>
+                <p class="map-directions">
+                    Get directions:
+                    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=12+Baker+Street,+Melville,+Johannesburg,+2109" target="_blank" rel="noopener">Main Storefront</a> |
+                    <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Melville+Sunday+Market,+7th+Street,+Melville,+Johannesburg" target="_blank" rel="noopener">Weekend Market Stall</a>
+                </p>
+            </div>
         </section>
     </div>
 
